@@ -63,6 +63,6 @@ public class Image extends Model{
     public String extension;
 
     @Column("owner")
-    public Model owner;
+    public Long owner;
 
 }

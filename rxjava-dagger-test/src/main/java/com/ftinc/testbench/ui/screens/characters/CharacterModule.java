@@ -1,4 +1,4 @@
-package com.ftinc.testbench.ui.screens.test;
+package com.ftinc.testbench.ui.screens.characters;
 
 import com.ftinc.testbench.api.ApiService;
 import com.ftinc.testbench.ui.UiModule;
@@ -12,26 +12,26 @@ import dagger.Provides;
  * Created by r0adkll on 4/7/15.
  */
 @Module(
-    injects = TestActivity.class,
+    injects = CharacterActivity.class,
     addsTo = UiModule.class,
     complete = false
 )
-public class TestModule {
+public class CharacterModule {
 
-    private TestView mView;
+    private CharacterView mView;
 
-    public TestModule(TestView view) {
+    public CharacterModule(CharacterView view) {
         this.mView = view;
     }
 
     @Provides @Singleton
-    TestView provideView(){
+    CharacterView provideView(){
         return mView;
     }
 
     @Provides @Singleton
-    TestPresenter providePresenter(TestView view,
+    CharacterPresenter providePresenter(CharacterView view,
                                    ApiService service){
-        return new TestPresenterImpl(view, service);
+        return new CharacterPresenterImpl(view, service);
     }
 }

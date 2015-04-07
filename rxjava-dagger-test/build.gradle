@@ -51,4 +51,9 @@ dependencies {
     compile 'io.reactivex:rxjava:1.0.8'
     compile 'io.reactivex:rxandroid:0.24.0'
 
+    compile 'frankiesardo:icepick:3.0.2'
+    apt 'frankiesardo:icepick-processor:3.0.2'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
 }

@@ -26,4 +26,22 @@
         android:layout_below="@+id/toolbar_actionbar"
         />
 
+    <com.ftinc.kit.widget.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_actionbar"
+
+        app:emptyIcon="@mipmap/ic_launcher"
+        app:emptyMessage="There are currently no Marvel characters loaded"
+        app:emptyIconSize="100dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
 </RelativeLayout>

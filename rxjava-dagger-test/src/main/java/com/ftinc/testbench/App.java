@@ -29,6 +29,7 @@ public class App extends BaseApplication {
             .setLogLevel(Ollie.LogLevel.FULL)
             .init();
 
+
     }
 
     @Override

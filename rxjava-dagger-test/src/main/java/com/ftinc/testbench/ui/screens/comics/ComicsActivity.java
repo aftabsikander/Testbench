@@ -1,21 +1,21 @@
-package com.ftinc.testbench.ui.screens.test;
+package com.ftinc.testbench.ui.screens.comics;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 
-import com.ftinc.kit.mvp.BaseActivity;
 import com.ftinc.testbench.R;
-import com.nispok.snackbar.Snackbar;
-import com.nispok.snackbar.enums.SnackbarType;
+import com.ftinc.testbench.ui.model.BaseTestActivity;
 
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
-
-public class TestActivity extends BaseActivity implements TestView{
+/**
+ * Project: Testbench
+ * Package: com.ftinc.testbench.ui.screens.comics
+ * Created by drew.heavner on 4/7/15.
+ */
+public class ComicsActivity extends BaseTestActivity implements ComicsView{
 
     /***********************************************************************************************
      *
@@ -23,11 +23,8 @@ public class TestActivity extends BaseActivity implements TestView{
      *
      */
 
-    @InjectView(R.id.recycler)
-    RecyclerView mRecycler;
-
     @Inject
-    TestPresenter mPresenter;
+    ComicsPresenter mPresenter;
 
     /***********************************************************************************************
      *
@@ -38,18 +35,15 @@ public class TestActivity extends BaseActivity implements TestView{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_comics);
         ButterKnife.inject(this);
-
-        // TODO: Setup Ui
-        mPresenter.downloadCharacters(50, 0);
 
     }
 
     @Override
     protected Object[] getModules() {
         return new Object[]{
-            new TestModule(this)
+            new ComicsModule(this)
         };
     }
 
@@ -66,11 +60,7 @@ public class TestActivity extends BaseActivity implements TestView{
 
     @Override
     public void showSnackBar(String s) {
-        Snackbar.with(this)
-                .text(s)
-                .type(SnackbarType.MULTI_LINE)
-                .swipeToDismiss(true)
-                .show(this);
+
     }
 
     @Override

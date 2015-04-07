@@ -9,5 +9,10 @@
     <string name="error_no_response">There was no response from the server.</string>
     <string name="error_network_http_error">There was an issue in communicating with the server.</string>
     <string name="error_unknown">An unknown error has occurred.</string>
+    <string name="action_view">Change View</string>
+    <string name="action_view_list">Switch to grid view</string>
+    <string name="action_view_grid">Switch to list view</string>
+    <string name="action_search">Search characters</string>
+    <string name="characters">Characters</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.ftinc.testbench.ui.screens.test;
+package com.ftinc.testbench.ui.screens.characters;
 
 import com.ftinc.kit.mvp.IBaseActivityPresenter;
 import com.ftinc.testbench.api.model.*;
@@ -11,7 +11,7 @@ import rx.Observable;
 /**
  * Created by r0adkll on 4/7/15.
  */
-public interface TestPresenter  {
+public interface CharacterPresenter {
 
     Observable<List<Character>> downloadCharacters(int limit, int offset);
 

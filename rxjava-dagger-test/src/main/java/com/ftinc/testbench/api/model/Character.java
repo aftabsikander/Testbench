@@ -83,7 +83,7 @@ public class Character extends Model{
 
     public Observable<MetaList> getEvents(){
         return Select.from(MetaList.class)
-                .where("owner=? AND type=?", id, "events")
+                .where("images.owner=? AND type=?", id, "events")
                 .observableSingle();
     }
 
@@ -113,7 +113,7 @@ public class Character extends Model{
         long result = save();
 
         if(thumbnail != null){
-            thumbnail.owner = this;
+            thumbnail.owner = id;
             thumbnail.save();
         }
 
