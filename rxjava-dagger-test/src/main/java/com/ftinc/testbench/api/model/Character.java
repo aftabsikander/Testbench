@@ -41,43 +41,18 @@ public class Character extends Model{
     public String resourceURI;
 
     @JsonField
-    @Column("thumbnail")
-    @ForeignKey(
-            onDelete = CASCADE,
-            onUpdate = CASCADE
-    )
     public Image thumbnail;
 
     @JsonField
-    @Column("events")
-    @ForeignKey(
-            onDelete = CASCADE,
-            onUpdate = CASCADE
-    )
     public MetaList events;
 
     @JsonField
-    @Column("series")
-    @ForeignKey(
-            onDelete = CASCADE,
-            onUpdate = CASCADE
-    )
     public MetaList series;
 
     @JsonField
-    @Column("stories")
-    @ForeignKey(
-            onDelete = CASCADE,
-            onUpdate = CASCADE
-    )
     public MetaList stories;
 
     @JsonField
-    @Column("comics")
-    @ForeignKey(
-            onDelete = CASCADE,
-            onUpdate = CASCADE
-    )
     public MetaList comics;
 
 
