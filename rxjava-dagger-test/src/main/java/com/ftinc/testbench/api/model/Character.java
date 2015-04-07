@@ -2,14 +2,30 @@ package com.ftinc.testbench.api.model;
 
 import java.util.ArrayList;
 
-public class Character {
+import ollie.Model;
+import ollie.annotation.Column;
+import ollie.annotation.Table;
 
-    public double id;
+@Table("characters")
+public class Character extends Model{
+
+    @Column("character_id")
+    public int id;
+
+    @Column("name")
     public String name;
+
+    @Column("description")
     public String description;
+
+    @Column("modified")
     public String modified;
-    public Image thumbnail;
+
+    @Column("resourceURI")
     public String resourceURI;
+
+    public Image thumbnail;
+
     public ArrayList<Urls> urls;
 
     public MetaList events;

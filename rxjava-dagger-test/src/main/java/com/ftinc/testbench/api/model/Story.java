@@ -1,25 +1,20 @@
 package com.ftinc.testbench.api.model;
 
-import java.util.ArrayList;
-
-public class Event {
+public class Story {
 	
     private int id;
-    private String start;
     private String description;
-    private String resourceURI;
     private String modified;
+    private String resourceURI;
+    private Item originalIssue;
+    private String type;
     private String title;
-    private ArrayList<Urls> urls;
-    private String end;
     private Image thumbnail;
-    private Item next;
-    private Item previous;
 
     private MetaList series;
     private MetaList comics;
     private MetaList creators;
-    private MetaList stories;
     private MetaList characters;
+    private MetaList events;
 
 }

@@ -9,7 +9,7 @@ import ollie.Model;
  * Package: com.ftinc.testbench.api.model
  * Created by drew.heavner on 4/6/15.
  */
-public class MarvelResponse<T extends Model> {
+public class MarvelResponse<T> {
 
     public int code;
     public String status;
@@ -23,7 +23,7 @@ public class MarvelResponse<T extends Model> {
      *
      * @param <T>
      */
-    public static class Data<T extends Model>{
+    public static class Data<T>{
 
         public int offset;
         public int limit;

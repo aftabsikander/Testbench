@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Creator {
 	
-    private double id;
-    private String modified;
-    private String firstName;
-    private String suffix;
-    private String resourceURI;
-    private String lastName;
-    private String middleName;
-    private ArrayList<Urls> urls;
-    private String fullName;
-    private Image thumbnail;
+    public int id;
+    public String modified;
+    public String firstName;
+    public String suffix;
+    public String resourceURI;
+    public String lastName;
+    public String middleName;
+    public ArrayList<Urls> urls;
+    public String fullName;
+    public Image thumbnail;
 
-    private MetaList series;
-    private MetaList stories;
-    private MetaList comics;
-    private MetaList events;
+    public MetaList series;
+    public MetaList stories;
+    public MetaList comics;
+    public MetaList events;
 
 }

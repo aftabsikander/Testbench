@@ -4,37 +4,37 @@ import java.util.ArrayList;
 
 public class Comic{
 	
-    private String variantDescription;
-    private String modified;
-    private Image thumbnail;
-    private String description;
-    private String title;
-    private String diamondCode;
-    private String issn;
-    private String upc;
-    private double pageCount;
-    private double id;
-    private String ean;
-    private String format;
-    private String resourceURI;
-    private String isbn;
-    private double issueNumber;
-    private double digitalId;
+    public String variantDescription;
+    public String modified;
+    public Image thumbnail;
+    public String description;
+    public String title;
+    public String diamondCode;
+    public String issn;
+    public String upc;
+    public int pageCount;
+    public int id;
+    public String ean;
+    public String format;
+    public String resourceURI;
+    public String isbn;
+    public int issueNumber;
+    public int digitalId;
+    public Item series;
 
-    private ArrayList<MarvelDate> dates;
-    private ArrayList<Urls> urls;
-    private ArrayList<String> variants;
-    private ArrayList<String> collections;
-    private ArrayList<String> collectedIssues;
-    private ArrayList<Prices> prices;
-    private ArrayList<Image> images;
-    private ArrayList<TextObject> textObjects;
+    public ArrayList<MarvelDate> dates;
+    public ArrayList<Urls> urls;
+    public ArrayList<String> variants;
+    public ArrayList<String> collections;
+    public ArrayList<String> collectedIssues;
+    public ArrayList<Prices> prices;
+    public ArrayList<Image> images;
+    public ArrayList<TextObject> textObjects;
 
-    private Series series;
-    private MetaList stories;
-    private MetaList characters;
-    private MetaList events;
-    private MetaList creators;
+    public MetaList stories;
+    public MetaList characters;
+    public MetaList events;
+    public MetaList creators;
     
 
 }
