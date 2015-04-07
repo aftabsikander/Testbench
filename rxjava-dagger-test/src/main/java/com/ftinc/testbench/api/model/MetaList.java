@@ -1,6 +1,7 @@
 package com.ftinc.testbench.api.model;
 
 import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonIgnore;
 import com.bluelinelabs.logansquare.annotation.JsonObject;
 
 import java.util.ArrayList;
@@ -28,9 +29,13 @@ public class MetaList extends Model{
     @Column("available")
     public Integer available;
 
-    /*
-     * This is the list of items that is parsed by LoganSquare
-     */
+    @JsonIgnore
+    public String type;
+
+    @JsonIgnore
+    @Column("owner")
+    public  Model owner;
+
     @JsonField
     ArrayList<Item> items;
 
@@ -50,7 +55,7 @@ public class MetaList extends Model{
      * Save this metalist item
      */
     public void saveMetaList(){
-//        save();
+        save();
         for(Item item: items){
             item.owner = this;
             item.save();

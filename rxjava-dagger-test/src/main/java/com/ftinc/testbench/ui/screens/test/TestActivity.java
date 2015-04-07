@@ -2,6 +2,7 @@ package com.ftinc.testbench.ui.screens.test;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 
 import com.ftinc.kit.mvp.BaseActivity;
 import com.ftinc.testbench.R;
@@ -11,6 +12,7 @@ import com.nispok.snackbar.enums.SnackbarType;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 
 public class TestActivity extends BaseActivity implements TestView{
@@ -20,6 +22,9 @@ public class TestActivity extends BaseActivity implements TestView{
      * Variables
      *
      */
+
+    @InjectView(R.id.recycler)
+    RecyclerView mRecycler;
 
     @Inject
     TestPresenter mPresenter;

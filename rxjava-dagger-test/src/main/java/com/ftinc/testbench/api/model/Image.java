@@ -61,5 +61,8 @@ public class Image extends Model{
     @JsonField
     @Column("extension")
     public String extension;
-    
+
+    @Column("owner")
+    public Model owner;
+
 }

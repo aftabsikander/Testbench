@@ -40,6 +40,13 @@ public class Character extends Model{
     @Column("resourceURI")
     public String resourceURI;
 
+
+    /***********************************************************************************************
+     *
+     * These object fields cannot be annotated with columns
+     *
+     */
+
     @JsonField
     public Image thumbnail;
 
@@ -55,10 +62,6 @@ public class Character extends Model{
     @JsonField
     public MetaList comics;
 
-
-    /*
-     * Un-annotative variables
-     */
     @JsonField
     public ArrayList<Urls> urls;
 
@@ -72,6 +75,36 @@ public class Character extends Model{
                 .observable();
     }
 
+    public Observable<Image> getThumbnail(){
+        return Select.from(Image.class)
+                .where("owner=?", id)
+                .observableSingle();
+    }
+
+    public Observable<MetaList> getEvents(){
+        return Select.from(MetaList.class)
+                .where("owner=? AND type=?", id, "events")
+                .observableSingle();
+    }
+
+    public Observable<MetaList> getSeries(){
+        return Select.from(MetaList.class)
+                .where("owner=? AND type=?", id, "series")
+                .observableSingle();
+    }
+
+    public Observable<MetaList> getStories(){
+        return Select.from(MetaList.class)
+                .where("owner=? AND type=?", id, "stories")
+                .observableSingle();
+    }
+
+    public Observable<MetaList> getComics(){
+        return Select.from(MetaList.class)
+                .where("owner=? AND type=?", id, "comics")
+                .observableSingle();
+    }
+
     /**
      * Properly save this character item
      */
@@ -79,19 +112,32 @@ public class Character extends Model{
     public long saveCharacter(){
         long result = save();
 
+        if(thumbnail != null){
+            thumbnail.owner = this;
+            thumbnail.save();
+        }
+
         if(events != null){
+            events.owner = this;
+            events.type = "events";
             events.saveMetaList();
         }
 
         if(series != null){
+            series.owner = this;
+            series.type = "series";
             series.saveMetaList();
         }
 
         if(stories != null){
+            stories.owner = this;
+            stories.type = "stories";
             stories.saveMetaList();
         }
 
         if(comics != null){
+            comics.owner = this;
+            comics.type = "comics";
             comics.saveMetaList();
         }
 
