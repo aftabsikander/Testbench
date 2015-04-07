@@ -5,6 +5,7 @@ import android.content.Context;
 import com.ftinc.testbench.BuildConfig;
 import com.ftinc.testbench.util.LoganSquareConverter;
 import com.ftinc.testbench.util.qualifiers.ApiUrl;
+import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
 
 import javax.inject.Singleton;
@@ -17,6 +18,7 @@ import retrofit.RestAdapter;
 import retrofit.client.Client;
 import retrofit.client.OkClient;
 import retrofit.converter.Converter;
+import retrofit.converter.GsonConverter;
 
 /**
  * Project: Testbench
@@ -46,6 +48,7 @@ public class ApiModule {
 
     @Provides @Singleton
     Converter provideRetrofitConverter(){
+//        return new GsonConverter(new Gson());
         return new LoganSquareConverter();
     }
 

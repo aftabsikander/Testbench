@@ -1,10 +1,14 @@
 package com.ftinc.testbench.api.model;
 
 
+import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonObject;
+
 import ollie.Model;
 import ollie.annotation.Column;
 import ollie.annotation.Table;
 
+@JsonObject
 @Table("images")
 public class Image extends Model{
 
@@ -50,9 +54,11 @@ public class Image extends Model{
 
     }
 
+    @JsonField
     @Column("path")
     public String path;
 
+    @JsonField
     @Column("extension")
     public String extension;
     

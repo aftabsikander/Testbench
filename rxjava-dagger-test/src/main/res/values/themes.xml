@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="Theme.Testbench" parent="Theme.Kit.Base.Light.NoActionBar">
+    <style name="Theme.Testbench" parent="Theme.Kit.Base.Light.DarkActionBar">
 
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
@@ -10,6 +10,9 @@
         <item name="android:textColorPrimary">@color/primaryText</item>
         <item name="android:textColorSecondary">@color/secondaryText</item>
         <item name="android:divider">@color/divider</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
 
     </style>
 

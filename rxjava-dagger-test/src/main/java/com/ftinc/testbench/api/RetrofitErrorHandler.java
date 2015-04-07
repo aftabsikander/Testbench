@@ -6,7 +6,8 @@ package com.ftinc.testbench.api;
 
 import android.content.Context;
 
-import com.ftinc.tradeversity.R;
+
+import com.ftinc.testbench.R;
 
 import retrofit.RetrofitError;
 import timber.log.Timber;

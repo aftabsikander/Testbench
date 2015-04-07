@@ -33,6 +33,8 @@ public final class ApiHeaders implements RequestInterceptor {
 
     @Override
     public void intercept(RequestFacade request) {
+        request.addHeader("Accept", "*/*");
+
         long timestamp = Utils.time();
         String preHash = String.format("%d%s%s", timestamp, mPrivateKey, mPublicKey);
         String hash = FormatUtils.generateMD5String(preHash);

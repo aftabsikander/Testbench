@@ -1,8 +1,12 @@
 package com.ftinc.testbench.api.model;
 
+import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import hugo.weaving.DebugLog;
 import ollie.Model;
 import ollie.annotation.Column;
 import ollie.annotation.ForeignKey;
@@ -12,24 +16,31 @@ import rx.Observable;
 
 import static ollie.annotation.ForeignKey.ReferentialAction.CASCADE;
 
+@JsonObject
 @Table("characters")
 public class Character extends Model{
 
+    @JsonField(name = "id")
     @Column("character_id")
-    public int id;
+    public Integer characterId;
 
+    @JsonField
     @Column("name")
     public String name;
 
+    @JsonField
     @Column("description")
     public String description;
 
+    @JsonField
     @Column("modified")
     public String modified;
 
+    @JsonField
     @Column("resourceURI")
     public String resourceURI;
 
+    @JsonField
     @Column("thumbnail")
     @ForeignKey(
             onDelete = CASCADE,
@@ -37,6 +48,7 @@ public class Character extends Model{
     )
     public Image thumbnail;
 
+    @JsonField
     @Column("events")
     @ForeignKey(
             onDelete = CASCADE,
@@ -44,6 +56,7 @@ public class Character extends Model{
     )
     public MetaList events;
 
+    @JsonField
     @Column("series")
     @ForeignKey(
             onDelete = CASCADE,
@@ -51,6 +64,7 @@ public class Character extends Model{
     )
     public MetaList series;
 
+    @JsonField
     @Column("stories")
     @ForeignKey(
             onDelete = CASCADE,
@@ -58,6 +72,7 @@ public class Character extends Model{
     )
     public MetaList stories;
 
+    @JsonField
     @Column("comics")
     @ForeignKey(
             onDelete = CASCADE,
@@ -69,10 +84,11 @@ public class Character extends Model{
     /*
      * Un-annotative variables
      */
+    @JsonField
     public ArrayList<Urls> urls;
 
     /**
-     * Get the list of associated Url's for this object
+     * Get the list of associated U
      * @return
      */
     public Observable<List<Urls>> getUrls(){
@@ -84,8 +100,9 @@ public class Character extends Model{
     /**
      * Properly save this character item
      */
-    public void saveCharacter(){
-        save();
+    @DebugLog
+    public long saveCharacter(){
+        long result = save();
 
         if(events != null){
             events.saveMetaList();
@@ -110,6 +127,7 @@ public class Character extends Model{
             }
         }
 
+        return result;
     }
 
 }

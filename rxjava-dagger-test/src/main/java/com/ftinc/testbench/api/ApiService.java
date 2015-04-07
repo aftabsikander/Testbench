@@ -4,7 +4,8 @@ import com.ftinc.testbench.api.model.Character;
 import com.ftinc.testbench.api.model.Comic;
 import com.ftinc.testbench.api.model.Creator;
 import com.ftinc.testbench.api.model.Event;
-import com.ftinc.testbench.api.model.MarvelResponse;
+import com.ftinc.testbench.api.model.responses.CharacterResponse;
+import com.ftinc.testbench.api.model.responses.MarvelResponse;
 import com.ftinc.testbench.api.model.Series;
 import com.ftinc.testbench.api.model.Story;
 
@@ -26,7 +27,7 @@ public interface ApiService {
      */
 
     @GET("/characters")
-    Observable<MarvelResponse<Character>>
+    Observable<CharacterResponse>
     getCharacters(@Query("name") String name,
                   @Query("nameStartsWith") String nameStartsWith,
                   @Query("limit") int limit,

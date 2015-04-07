@@ -47,13 +47,8 @@ public class App extends BaseApplication {
 
     @Override
     public Mods getMods() {
-        return new Mods() {
-            @Override
-            public Object[] getModules(Application application) {
-                return new Object[]{
-                    new AppModule(application)
-                };
-            }
+        return application -> new Object[]{
+            new AppModule(application)
         };
     }
 }

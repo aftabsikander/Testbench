@@ -1,5 +1,8 @@
 package com.ftinc.testbench.api.model;
 
+import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,22 +12,26 @@ import ollie.annotation.Table;
 import ollie.query.Select;
 import rx.Observable;
 
-
+@JsonObject
 @Table("metalists")
 public class MetaList extends Model{
 
+    @JsonField
     @Column("returned")
-    public int returned;
+    public Integer returned;
 
+    @JsonField
     @Column("collectionURI")
     public String collectionURI;
 
+    @JsonField
     @Column("available")
-    public int available;
+    public Integer available;
 
     /*
      * This is the list of items that is parsed by LoganSquare
      */
+    @JsonField
     ArrayList<Item> items;
 
     /**

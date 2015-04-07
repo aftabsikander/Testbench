@@ -19,7 +19,8 @@ import retrofit.mime.TypedString;
  */
 public class LoganSquareConverter implements Converter {
 
-	@Override public Object fromBody(TypedInput body, Type type) throws ConversionException {
+	@Override
+	public Object fromBody(TypedInput body, Type type) throws ConversionException {
 		try {
 			// Check if the type contains a parametrized list
 			if (ParameterizedType.class.isAssignableFrom(type.getClass())) {
@@ -36,7 +37,9 @@ public class LoganSquareConverter implements Converter {
 		}
 	}
 
-	@SuppressWarnings("unchecked") @Override public TypedOutput toBody(Object object) {
+	@SuppressWarnings("unchecked")
+	@Override
+	public TypedOutput toBody(Object object) {
 		try {
 			// Check if the type contains a parametrized list
 			if (List.class.isAssignableFrom(object.getClass())) {

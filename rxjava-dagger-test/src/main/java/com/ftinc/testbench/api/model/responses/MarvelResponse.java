@@ -1,4 +1,7 @@
-package com.ftinc.testbench.api.model;
+package com.ftinc.testbench.api.model.responses;
+
+import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonObject;
 
 import java.util.List;
 
@@ -31,6 +34,16 @@ public class MarvelResponse<T> {
         public int count;
         public List<T> results;
 
+        @Override
+        public String toString() {
+            return String.format("Data [offset: %d, limit: %d, total: %d, count: %d]",
+                    offset, limit, total, count);
+        }
     }
 
+    @Override
+    public String toString() {
+        return String.format("Marvel Response [%d, %s, %s, %s, %s, %s]",
+                code, status, copyright, attributionText, attributionHTML, data.toString());
+    }
 }

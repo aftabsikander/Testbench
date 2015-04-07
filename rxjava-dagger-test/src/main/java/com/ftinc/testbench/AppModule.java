@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.ftinc.testbench.api.ApiModule;
 import com.ftinc.testbench.data.DataModule;
+import com.ftinc.testbench.ui.UiModule;
 import com.ftinc.testbench.util.qualifiers.ApiUrl;
 import com.ftinc.testbench.util.qualifiers.PrivateKey;
 import com.ftinc.testbench.util.qualifiers.PublicKey;
@@ -19,9 +20,11 @@ import dagger.Provides;
  * Created by drew.heavner on 4/6/15.
  */
 @Module(
+    injects = App.class,
     includes = {
         ApiModule.class,
-        DataModule.class
+        DataModule.class,
+        UiModule.class
     },
     library = true
 )
@@ -40,7 +43,7 @@ public class AppModule {
 
     @Provides @Singleton @ApiUrl
     String provideApiUrl(){
-        return "http://gateway.marvel.com/v1/public/";
+        return "https://gateway.marvel.com/v1/public/";
     }
 
     @Provides @Singleton @PublicKey
