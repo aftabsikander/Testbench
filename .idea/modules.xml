@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Testbench.iml" filepath="$PROJECT_DIR$/Testbench.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dagger2-test/dagger2-test.iml" filepath="$PROJECT_DIR$/dagger2-test/dagger2-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava-dagger-test/rxjava-dagger-test.iml" filepath="$PROJECT_DIR$/rxjava-dagger-test/rxjava-dagger-test.iml" />
     </modules>
   </component>

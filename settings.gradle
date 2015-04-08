@@ -1,1 +1,1 @@
-include ':rxjava-dagger-test'
+include ':rxjava-dagger-test', ':dagger2-test'
