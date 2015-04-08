@@ -81,7 +81,7 @@ public class CharacterActivity extends BaseTestActivity implements CharacterView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_characters);
         ButterKnife.inject(this);
 
         mAdapter.setEmptyView(mEmptyView);

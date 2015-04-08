@@ -15,7 +15,7 @@ import rx.Observable;
 
 @JsonObject
 @Table("metalists")
-public class MetaList extends Model{
+public class  MetaList extends Model{
 
     @JsonField
     @Column("returned")
